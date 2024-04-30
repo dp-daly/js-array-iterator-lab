@@ -332,12 +332,12 @@ const travelMethodCounts = travelMethods.reduce((count, mode) => {
 
 //Writing out logic for my understanding
 // Reduce arguments here are an anonymous function and a formatted placeholder (also referred to as an InitialValue)
-// Parameters in the inner function here are (accumulator, currentElement)
+// Parameters in the inner function here are accumulator, currentElement
 // ? Whole new object being created is 'count' 
 // ? count[mode] refers to property of count whose key is the currentValue (i.e. the mode of transport, say 'car')
 // ? if a car already exists in the original array, 1 will be added to its value
 // ? if a car does not yet exist, it will be created with a value of one
-// ? After the iteration, the object 'count' is returned
+// ? After all iterations are complete, the object 'count' is returned
 // ? Also in this instance we used [] instead of dot notation when referring to object properties because the value is being dynamically created by the function.
 
 // Check your return value:
