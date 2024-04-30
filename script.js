@@ -14,11 +14,6 @@
     'Blake, William'
   ];
 
-  const travelMethods = [
-    'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
-    'bike', 'walk', 'car', 'van', 'car', 'truck'
-  ];
-
   const devs = [
     { name: 'Alex', year: 1988 },
     { name: 'Dani', year: 1986 },
@@ -319,9 +314,12 @@ console.log('Bonus 1 Correct Result: ', 861)
 // - Inside the reduce function, check if the travel method already exists as a key in your accumulator object. If it does, increment its count. If not, add it with a count of 1.
 // - Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
 
+const travelMethods = [
+    'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
+    'bike', 'walk', 'car', 'van', 'car', 'truck'
+  ];
 
 // Enter your solution code here:
-//! Confused about when to use dot notation vs square brackets to access properties of an object.
 
 const travelMethodCounts = travelMethods.reduce((count, mode) => {
     if (count[mode]) {
@@ -331,6 +329,16 @@ const travelMethodCounts = travelMethods.reduce((count, mode) => {
     }
     return count
 }, {})
+
+//Writing out logic for my understanding
+// Reduce arguments here are an anonymous function and a formatted placeholder (also referred to as an InitialValue)
+// Parameters in the inner function here are (accumulator, currentElement)
+// ? Whole new object being created is 'count' 
+// ? count[mode] refers to property of count whose key is the currentValue (i.e. the mode of transport, say 'car')
+// ? if a car already exists in the original array, 1 will be added to its value
+// ? if a car does not yet exist, it will be created with a value of one
+// ? After the iteration, the object 'count' is returned
+// ? Also in this instance we used [] instead of dot notation when referring to object properties because the value is being dynamically created by the function.
 
 // Check your return value:
 console.log('Bonus 2 My Result: ', travelMethodCounts)
